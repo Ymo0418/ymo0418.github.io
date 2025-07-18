@@ -91,6 +91,7 @@ $yiq-debug: false !default;
 /* brands */
 $behance-color: #1769ff !default;
 $bitbucket-color: #205081 !default;
+$bluesky-color: #1083fe !default;
 $dribbble-color: #ea4c89 !default;
 $facebook-color: #3b5998 !default;
 $flickr-color: #ff0084 !default;
@@ -109,6 +110,7 @@ $soundcloud-color: #ff3300 !default;
 $stackoverflow-color: #fe7a15 !default;
 $tumblr-color: #32506d !default;
 $twitter-color: #55acee !default;
+$x-color: #0f1419 !default;
 $vimeo-color: #1ab7ea !default;
 $vine-color: #00bf8f !default;
 $youtube-color: #bb0000 !default;
@@ -121,6 +123,10 @@ $link-color-visited: mix(#fff, $link-color, 15%) !default;
 $masthead-link-color: $primary-color !default;
 $masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
 $navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+
+/* notices */
+$notice-background-mix: 80% !default;
+$code-notice-background-min: 90% !default;
 
 /* syntax highlighting (base16) */
 $base00: #44494D !default;
