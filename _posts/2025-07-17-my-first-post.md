@@ -1,19 +1,18 @@
-
 ---
-title: "[Jekyll] 블로그 포스팅하는 방법""
+title:  "[Github 블로그] 블로그 첫 포스트" 
 
-categories: 
+categories:
   - Blog
 tags:
-  - [Blog, Jekyll, Github, Git]
+  - [Blog, Github]
 
 toc: false
 toc_sticky: false
-
+ 
 date: 2025-07-17
-last_modified_at: 2025-07-17
+last_modified_at: 2025-07-18
 ---
-
+ 
 
 영차 영차
 
