@@ -13,7 +13,7 @@ date: 2025-07-21
 last_modified_at: 2025-07-21
 ---
 
-<details markdown=1>
+<details class="smooth-toggle" markdown=1>
 <summary> 접는 글 </summary>
 
 #### 이것은 h4 입니다.

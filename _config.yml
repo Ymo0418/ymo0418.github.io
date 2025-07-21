@@ -121,7 +121,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      # url: "your.name@email.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -161,6 +161,8 @@ footer:
       # url:
   since: "2013"
 
+footer_scripts:
+  - /assets/js/toggle-smooth.js
 
 # Reading Files
 include:
@@ -205,7 +207,9 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: "
+
+"
 incremental: false
 
 
