@@ -5,15 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     while (detail.children.length > 1) {
       content.appendChild(detail.children[1]);
     }
-    content.classList.add('content');
+    content.classList.add("content");
     detail.appendChild(content);
 
-    // 애니메이션 적용
+    // 초기 스타일
+    content.style.overflow = "hidden";
+
+    let isAnimating = false;
     detail.addEventListener("toggle", () => {
       if (detail.open) {
         content.style.maxHeight = content.scrollHeight + "px";
+
+          isAnimating = false;
       } else {
         content.style.maxHeight = 0;
+        void content.offsetHeight;
       }
     });
   });
