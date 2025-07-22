@@ -14,6 +14,9 @@
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+smooth-toggle:
+  - /assets/css/smooth-toggle.scss
+
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
@@ -160,9 +163,6 @@ footer:
       icon: "fab fa-fw fa-instagram"
       # url:
   since: "2013"
-
-footer_scripts:
-  - /assets/js/toggle-smooth.js
 
 # Reading Files
 include:

@@ -1,48 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("details.smooth-toggle").forEach(detail => {
     const content = document.createElement('div');
-    // 기존 summary 이후의 내용들을 content에 넣기
+
+    // summary를 제외한 내용을 감싸는 div 생성
     while (detail.children.length > 1) {
       content.appendChild(detail.children[1]);
     }
-    content.classList.add("content");
-    detail.appendChild(content);
 
-    // 초기 스타일
+    content.classList.add("content");
     content.style.overflow = "hidden";
-    content.style.transition = "max-height 0.4s ease";
+    content.style.transition = "max-height 0.8s ease";
     content.style.maxHeight = detail.open ? content.scrollHeight + "px" : "0";
+    detail.appendChild(content);
 
     let isAnimating = false;
 
-    detail.addEventListener("toggle", () => {
-      if (isAnimating) return;
+    const openDetail = () => {
       isAnimating = true;
+      content.style.maxHeight = content.scrollHeight + "px";
 
-      if (detail.open) {
-        // 열기
+      // 애니메이션 후 상태 정리
+      setTimeout(() => {
+        isAnimating = false;
+        // 중요: 닫기 위해 max-height를 고정된 수치로 유지해야 함
         content.style.maxHeight = content.scrollHeight + "px";
+      }, 800);
+    };
 
-        // 열림 후 자동 높이로 전환 (스크롤 가능한 경우)
-        setTimeout(() => {
-          content.style.maxHeight = "none";
-          isAnimating = false;
-        }, 400);
+    const closeDetail = () => {
+      isAnimating = true;
+      // 현재 높이 고정
+      content.style.maxHeight = content.scrollHeight + "px";
+
+      // 강제 reflow
+      void content.offsetHeight;
+
+      // 애니메이션 시작
+      content.style.maxHeight = "0";
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 800);
+    };
+
+    // summary 클릭 감지 (toggle보다 빠름)
+    detail.querySelector("summary").addEventListener("click", (e) => {
+      if (isAnimating) {
+        e.preventDefault(); // 애니메이션 중에는 toggle 막기
+        return;
+      }
+
+      if (!detail.open) {
+        openDetail();
       } else {
-        // 닫기: 현재 높이로 고정 후 → 0 으로 줄이기
-        const height = content.scrollHeight;
-        content.style.maxHeight = height + "px";
-
-        // reflow 강제 적용
-        void content.offsetHeight;
-
-        content.style.maxHeight = "0";
-
-        setTimeout(() => {
-          isAnimating = false;
-          // 다시 열릴 때를 위해 max-height 초기화
-          content.style.maxHeight = "0";
-        }, 400);
+        closeDetail();
       }
     });
   });

@@ -13,13 +13,16 @@ date: 2025-07-21
 last_modified_at: 2025-07-21
 ---
 
-<details class="smooth-toggle">
-<summary> 접는 글 </summary>
-<div markdown="1">
+<details markdown="1">
+<summary>접는 글</summary>
 
 #### 이것은 h4 입니다.
 
-</div>
+여기에 다른 내용도 추가할 수 있습니다.
+- 목록
+- 이미지
+- 코드 블록 등
+
 </details>
 
 [맨 위로 이동하기](#){: .btn .btn--primary }{: .align-right}
