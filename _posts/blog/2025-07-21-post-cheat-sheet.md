@@ -13,11 +13,13 @@ date: 2025-07-21
 last_modified_at: 2025-07-21
 ---
 
-<details class="smooth-toggle" markdown=1>
+<details class="smooth-toggle">
 <summary> 접는 글 </summary>
+<div markdown="1">
 
 #### 이것은 h4 입니다.
 
+</div>
 </details>
 
 [맨 위로 이동하기](#){: .btn .btn--primary }{: .align-right}
