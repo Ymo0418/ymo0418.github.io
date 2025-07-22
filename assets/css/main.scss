@@ -7,11 +7,41 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-
 // "Cafe24Oneprettynight"
 @font-face {
     font-family: 'Cafe24Oneprettynight';
     src: local('Cafe24Oneprettynight'), url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+details.smooth-toggle > summary::-webkit-details-marker { /* Safari 브라우저용 사용자 정의 스타일 */
+    display: none;
+}
+details.smooth-toggle > summary {
+    display: block; /* 그 외의 브라우저용 사용자 정의 스타일 */
+    position: relative;
+    padding-left: 1.2em;
+    cursor: pointer;
+}
+details.smooth-toggle > summary::before {
+    content: "";
+    position: absolute;
+    border-top: 0.38em solid transparent;
+    border-bottom: 0.38em solid transparent;
+    border-left: 0.6em solid #fff9c2;
+    top: 0.52em;
+    left: 0;
+    transition: .25s transform;
+}
+details.smooth-toggle[open] > summary:before {
+    transform: rotateZ(90deg);
+}
+details.smooth-toggle .content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.8s ease;
+}
+details.smooth-toggle[open] .content {
+    max-height: 500px;
 }
