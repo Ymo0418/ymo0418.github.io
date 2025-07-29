@@ -68,6 +68,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "University" %}
+                        <li><a href="/categories/university" class="">대학 활동 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Design Pattern" %}
                         <li><a href="/categories/design-pattern" class="">디자인 패턴 ({{category[1].size}})</a></li>
                     {% endif %}

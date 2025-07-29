@@ -1,5 +1,5 @@
 ---
-title:  "[Github 블로그] 포스트 작성 템플릿" 
+title:  "[블로그] 포스트 작성 템플릿" 
 
 categories:
   - Blog

@@ -1,5 +1,5 @@
 ---
-title:  "[Github 블로그] 블로그 첫 포스트" 
+title:  "[블로그] 블로그 첫 포스트" 
 
 categories:
   - Blog
